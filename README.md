@@ -35,13 +35,13 @@ You'll find the endpoints methods, paths and description in the section bellow.
 **Code** `HTTP 200 OK`
 ```json
 {
-	"syncedContacts": 1, 
-  "contacts": [
-		{
-			"firstName": "string",
-			"lastName": "string",
-      "email": "string"
-		}
-	]
+    "syncedContacts": 1,
+    "contacts": [
+        {
+            "firstName": "string",
+            "lastName": "string",
+            "email": "string"
+        }
+    ]
 }
 ```
