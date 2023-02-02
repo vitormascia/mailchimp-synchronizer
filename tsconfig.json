@@ -1,13 +1,15 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "lib": ["ES5", "ES6", "ES2022", "dom"],
+        "lib": ["ES2022", "ES6", "DOM"],
         "target": "ES2022",
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
+        "module": "ES2022",
+        "moduleResolution": "Node",
         "outDir": "./build",
         "rootDir": "./src",
-        "baseUrl": "src",
+        "baseUrl": ".",
+        "sourceRoot": "./src",
+        "typeRoots": ["./node_modules/@types"],
         "noUnusedParameters": true,
         "noUnusedLocals": true,
         "emitDecoratorMetadata": true,
@@ -17,15 +19,15 @@
         "allowSyntheticDefaultImports": true,
         "downlevelIteration": true,
         "alwaysStrict": true,
+        "removeComments": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "sourceMap": true,
         "strict": true,
-        "sourceRoot": "./src",
-        "paths": {
-            "@/*": ["*"]
-        },
         "resolveJsonModule": true
+    },
+    "ts-node": {
+        "esm": true
     },
     "exclude": ["node_modules", "build"],
     "include": ["src/**/*"]

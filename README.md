@@ -1,6 +1,6 @@
 # :monkey: Mailchimp Synchronizer
 
-![node](https://img.shields.io/badge/node-18.11.18-green.svg)
+![node](https://img.shields.io/badge/node-19.5.0-green.svg)
 ![typescript](https://img.shields.io/badge/typescript-4.9.4-blue.svg)
 ![express](https://img.shields.io/badge/express-4.18.2-red.svg)
 
