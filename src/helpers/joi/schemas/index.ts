@@ -1,3 +1,3 @@
-import createAudienceSchema from "./helpers.joi.schemas.createAudience.js";
+import updateAudienceSchema from "./helpers.joi.schemas.createAudience.js";
 
-export { createAudienceSchema };
+export { updateAudienceSchema };

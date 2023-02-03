@@ -1,13 +1,8 @@
 enum LogLevelColors {
     DEBUG = "bold green",
-    INFO = "bold blue",
+    INFO = "bold cyan",
     WARN = "bold yellow",
     ERROR = "bold red",
-}
-
-enum Language {
-    ENG = "English",
-    PT_BR = "Portuguese-BR",
 }
 
 enum ISO3166CountryCode {
@@ -260,4 +255,91 @@ enum ISO3166CountryCode {
     Zimbabwe = "ZW",
 }
 
-export { ISO3166CountryCode, Language, LogLevelColors };
+enum Language {
+    English = "en",
+    Arabic = "ar",
+    Afrikaans = "af",
+    Belarusian = "be",
+    Bulgarian = "bg",
+    Catalan = "ca",
+    Chinese = "zh",
+    Croatian = "hr",
+    Czech = "cs",
+    Danish = "da",
+    Dutch = "nl",
+    Estonian = "et",
+    Farsi = "fa",
+    Finnish = "fi",
+    French_France = "fr",
+    French_Canada = "fr_CA",
+    German = "de",
+    Greek = "el",
+    Hebrew = "he",
+    Hindi = "hi",
+    Hungarian = "hu",
+    Icelandic = "is",
+    Indonesian = "id",
+    Irish = "ga",
+    Italian = "it",
+    Japanese = "ja",
+    Khmer = "km",
+    Korean = "ko",
+    Latvian = "lv",
+    Lithuanian = "lt",
+    Maltese = "mt",
+    Malay = "ms",
+    Macedonian = "mk",
+    Norwegian = "no",
+    Polish = "pl",
+    Portuguese_Brazil = "pt",
+    Portuguese_Portugal = "pt_PT",
+    Romanian = "ro",
+    Russian = "ru",
+    Serbian = "sr",
+    Slovak = "sk",
+    Slovenian = "sl",
+    Spanish_Mexico = "es",
+    Spanish_Spain = "es_ES",
+    Swahili = "sw",
+    Swedish = "sv",
+    Tamil = "ta",
+    Thai = "th",
+    Turkish = "tr",
+    Ukrainian = "uk",
+    Vietnamese = "vi",
+}
+
+enum MemberStatus {
+    Subscribed = "subscribed",
+    Unsubscribed = "unsubscribed",
+    Cleaned = "cleaned",
+    Pending = "pending",
+    Transactional = "transactional",
+}
+
+enum EmailType {
+    Html = "html",
+    Text = "text",
+}
+
+enum HttpMethod {
+    Get = "GET",
+    Post = "POST",
+    Put = "PUT",
+    Patch = "PATCH",
+    Delete = "DELETE",
+    Options = "OPTIONS",
+    Head = "HEAD",
+}
+
+enum ErrorCode {
+    Contact_Exists = "ERROR_CONTACT_EXISTS",
+    Generic = "ERROR_GENERIC",
+}
+
+enum Visibility {
+    Public = "pub",
+    Private = "prv",
+}
+
+export { EmailType, ErrorCode, HttpMethod, ISO3166CountryCode, Language, LogLevelColors, MemberStatus, Visibility };

@@ -1,9 +1,13 @@
-import audiencesService, { createAudience } from "./audiences/index.js";
+import audiencesService, { updateAudience } from "./audiences/index.js";
 import contactsService, { syncContacts } from "./contacts/index.js";
+import healthChecksService, { ping, pingMailchimp } from "./healthChecks/index.js";
 
 export {
-  audiencesService,
-  contactsService,
-  createAudience,
-  syncContacts,
+    audiencesService,
+    contactsService,
+    healthChecksService,
+    ping,
+    pingMailchimp,
+    syncContacts,
+    updateAudience,
 };

@@ -1,11 +1,13 @@
 import express from "express";
 
 import { audiencesController } from "../controllers/index.js";
-import { createAudienceSchema } from "../helpers/index.js";
+import { pathParams, updateAudienceSchema } from "../helpers/index.js";
 import { bouncer, buildCallback } from "../middlewares/index.js";
 
+const { audienceId } = pathParams;
+
 const audiencesRoutes = express
-  .Router()
-  .post("", bouncer(createAudienceSchema), buildCallback(audiencesController.createAudience));
+    .Router()
+    .patch(`/${audienceId}`, bouncer(updateAudienceSchema), buildCallback(audiencesController.updateAudience));
 
 export default audiencesRoutes;

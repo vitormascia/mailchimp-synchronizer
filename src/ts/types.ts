@@ -1,17 +1,20 @@
+import _mailchimpClient from "@mailchimp/mailchimp_marketing";
 import { NextFunction, Request, Response } from "express";
 import winston from "winston";
 
-import { ICreateAudienceRequest, IHttpRequest, IHttpResponse } from "./interfaces.js";
+import { IHttpRequest, IHttpResponse, ITrioContact } from "./interfaces.js";
 
 type TWinstonLogger = typeof winston;
+type TMailchimpClient = typeof _mailchimpClient;
 
-type TAnyObject = Record<string, unknown>;
+type TAnyObject = object;
 type TEmptyObject = Record<string, never>;
 type TModify<T, R> = Omit<T, keyof R> & R;
 
 type TBouncer = (req: Request, _res: Response, next: NextFunction) => Promise<void>;
-type TAnyRequest = IHttpRequest & ICreateAudienceRequest;
-type TController = (httpRequest: TAnyRequest) => Promise<IHttpResponse>;
+type TController = (httpRequest: IHttpRequest) => Promise<IHttpResponse> | IHttpResponse;
 type TBuildCallback = (req: Request, res: Response, next: NextFunction) => Promise<void>;
 
-export { TAnyObject, TBouncer, TBuildCallback, TController, TEmptyObject, TModify, TWinstonLogger };
+type TContact = Omit<ITrioContact, "createdAt" | "avatar" | "id">;
+
+export { TAnyObject, TBouncer, TBuildCallback, TContact, TController, TEmptyObject, TMailchimpClient, TModify, TWinstonLogger };

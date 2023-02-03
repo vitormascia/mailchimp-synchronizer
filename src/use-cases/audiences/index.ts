@@ -1,10 +1,13 @@
-import buildCreateAudience from "./use-cases.audiences.createAudience.js";
+import { mailchimpClient } from "../../clients/index.js";
+import buildUpdateAudience from "./use-cases.audiences.updateAudience.js";
 
-const createAudience = buildCreateAudience();
+const updateAudience = buildUpdateAudience({
+    mailchimpClient,
+});
 
 const audiencesService = Object.freeze({
-  createAudience,
+    updateAudience,
 });
 
 export default audiencesService;
-export { createAudience };
+export { updateAudience };

@@ -1,23 +1,46 @@
-import { ISO3166CountryCode, Language, LogLevelColors } from "./enums.js";
-import { IConfig, ICreateAudienceRequest, IHttpRequest, IHttpResponse, IJoiBaseSchema, ILogger, IValidatedRequest } from "./interfaces.js";
-import { TAnyObject, TBouncer, TBuildCallback, TController, TEmptyObject, TModify, TWinstonLogger } from "./types.js";
+import { EmailType, ErrorCode, HttpMethod, ISO3166CountryCode, Language, LogLevelColors, MemberStatus, Visibility } from "./enums.js";
+import { IBuildPingMailchimp, IBuildSyncContacts, IBuildUpdateAudience, IClient, IConfig, IHttpRequest, IHttpResponse, IJoiBaseSchema, ILogger, IMailchimpHealthCheck, IPingMailchimpRequest, IPingMailchimpResponse, IPingRequest, IPingResponse, IRequestParams, ISyncContactsRequest, ISyncContactsResponse, ITrioContact, IUpdateAudienceRequest, IUpdateAudienceRequestBody, IUpdateAudienceRequestPath, IUpdateAudienceResponse, IUpdatedAudience } from "./interfaces.js";
+import { TAnyObject, TBouncer, TBuildCallback, TContact, TController, TEmptyObject, TMailchimpClient, TModify, TWinstonLogger } from "./types.js";
 
 export {
+    EmailType,
+    ErrorCode,
+    HttpMethod,
+    IBuildPingMailchimp,
+    IBuildSyncContacts,
+    IBuildUpdateAudience,
+    IClient,
     IConfig,
-    ICreateAudienceRequest,
     IHttpRequest,
     IHttpResponse,
     IJoiBaseSchema,
     ILogger,
+    IMailchimpHealthCheck,
+    IPingMailchimpRequest,
+    IPingMailchimpResponse,
+    IPingRequest,
+    IPingResponse,
+    IRequestParams,
     ISO3166CountryCode,
-    IValidatedRequest,
+    ISyncContactsRequest,
+    ISyncContactsResponse,
+    ITrioContact,
+    IUpdateAudienceRequest,
+    IUpdateAudienceRequestBody,
+    IUpdateAudienceRequestPath,
+    IUpdateAudienceResponse,
+    IUpdatedAudience,
     Language,
     LogLevelColors,
+    MemberStatus,
     TAnyObject,
     TBouncer,
     TBuildCallback,
+    TContact,
     TController,
     TEmptyObject,
+    TMailchimpClient,
     TModify,
     TWinstonLogger,
+    Visibility,
 };

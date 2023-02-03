@@ -1,3 +1,3 @@
-import { createAudienceSchema } from "./schemas/index.js";
+import { updateAudienceSchema } from "./schemas/index.js";
 
-export { createAudienceSchema };
+export { updateAudienceSchema };

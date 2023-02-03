@@ -1,9 +1,13 @@
+import { mailchimpClient, trioClient } from "../../clients/index.js";
 import buildSyncContacts from "./use-cases.contacts.syncContacts.js";
 
-const syncContacts = buildSyncContacts();
+const syncContacts = buildSyncContacts({
+    trioClient,
+    mailchimpClient,
+});
 
 const contactsService = Object.freeze({
-  syncContacts,
+    syncContacts,
 });
 
 export default contactsService;

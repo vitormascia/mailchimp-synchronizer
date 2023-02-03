@@ -1,3 +1,5 @@
-import { createAudienceSchema } from "./joi/index.js";
+import caseConverter from "./helpers.caseConverter.js";
+import pathParams from "./helpers.pathParams.js";
+import { updateAudienceSchema } from "./joi/index.js";
 
-export { createAudienceSchema };
+export { caseConverter, pathParams, updateAudienceSchema };
