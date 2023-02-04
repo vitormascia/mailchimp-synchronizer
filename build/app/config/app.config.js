@@ -6,7 +6,7 @@ function setConfig(value, defaultValue = EMPTY_STRING) {
 }
 const config = Object.freeze({
     APP: {
-        PORT: parseInt(setConfig(process.env.PORT, DEFAULT_APP_PORT)),
+        PORT: parseInt(setConfig(process.env.APP_PORT, DEFAULT_APP_PORT)),
         NAME: setConfig(process.env.APP_NAME),
         ENVIRONMENT: setConfig(process.env.NODE_ENV),
     },

@@ -6,6 +6,7 @@
     "main": "./build/app/entry-points/app.entry-points.apiBoot.ts",
     "license": "ISC",
     "scripts": {
+        "start": "node ./build/app/entry-points/app.entry-points.apiBoot.js",
         "api:boot:ts": "ts-node ./src/app/entry-points/app.entry-points.apiBoot.ts",
         "api:boot:js": "node ./build/app/entry-points/app.entry-points.apiBoot.js",
         "api:boot-watch:ts": "nodemon --watch ./src/**/*.ts --exec ts-node ./src/app/entry-points/app.entry-points.apiBoot.ts",
