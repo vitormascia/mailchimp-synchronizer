@@ -1,1 +1,1 @@
-worker: npm api:boot:js
+web: npm api:boot:js

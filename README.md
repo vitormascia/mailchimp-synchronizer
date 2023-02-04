@@ -4,7 +4,7 @@
 ![TypeScript](https://img.shields.io/badge/typescript-4.9.4-blue.svg)
 ![Express.js](https://img.shields.io/badge/express-4.18.2-red.svg)
 
-An API dedicated to syncs contacts from Trio's Mock API to Mailchimp. Here you'll find the deliverables requested at [**Trio's Back-End Project**](https://trio.notion.site/Back-End-Project-78fa9bd235be48fd82887f73055ae133) and a few extra things!
+An API dedicated to sync contacts from Trio's Mock API to Mailchimp. Here you'll find the deliverables requested at [**Trio's Back-End Project**](https://trio.notion.site/Back-End-Project-78fa9bd235be48fd82887f73055ae133) and a few extra things!
 
 ---
 
@@ -44,7 +44,7 @@ The image below shows the 4 concentric circles that compose a **Clean Architectu
 
 - :dna: **Entities**
 
-The **Entities** layer lives at the very center of the onion, encapsulating enterprise wide business rules. They are the primary concepts of your business. An **entity** can be:
+The **Entities** layer lives in the very center of the onion, encapsulating enterprise wide business rules. They are the primary concepts of your business. An **entity** can be:
 
 1. Object with methods
 2. Set of data structures and functions
@@ -66,13 +66,13 @@ An important functionality is to convert data from the format most convenient fo
 
 - :cd: **Frameworks and Drivers**
 
-The **Frameworks and Drivers** layer lies outside the **Interface Adapters** layer (a.k.a the **Infrastructure Layer**). Is the outermost layer that provides all necessary details about frameworks, drivers, and tools such as Databases that we use to build our application. **Framework and Drivers** are actual external services/components that **Interface Adapters** connect to.
+The **Frameworks and Drivers** layer lies outside the **Interface Adapters** layer (a.k.a the **Infrastructure Layer**). It is the outermost layer that provides all necessary details about frameworks, drivers, and tools such as Databases that we use to build our application. **Framework and Drivers** are actual external services/components that **Interface Adapters** connect to.
 
 ### :yarn: **The Dependency Rule**
 
-The concentric circles represent different areas of software. In general, the further in you go, the higher level the software becomes. The inner components are defined before the existence of the outer components. Therefore, changes of outer components should not affect inner components.
+The concentric circles represent different areas of a software. In general, the further in you go, the higher level the software becomes. The inner components are defined before the existence of the outer components. Therefore, changes of outer components should not affect inner components.
 
-You see the arrows in the image above? They are pointing from the outermost circle down into the innermost circle, they only go in one direction. The dependence flow is represented by the arrows, indicating that:
+Do you see the arrows in the image above? They are pointing from the outermost circle down into the innermost circle, they only go in one direction. The dependence flow is represented by the arrows, indicating that:
 
 - :heavy_check_mark: An _**outer ring**_ **can** depend on an _**inner ring**_
 
@@ -84,7 +84,7 @@ This is what The **Dependency Rule** is all about!
 
 ---
 
-## :milky_way: **Mixing all up**
+## :milky_way: **Mixing it all up**
 
 Well, every API has it's own universe, right? That being said, there's no perfect formula to implement the **Clean Architecture**. Every code out there trying to implement **Clean Architecture** will have their peculiarities, and it's not different for this API!
 
