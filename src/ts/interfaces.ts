@@ -4,6 +4,7 @@ import { StatusCodes } from "http-status-codes";
 import Joi from "joi";
 
 import { MailchimpClient, TrioClient } from "../clients/index.js";
+import { CaseConverter } from "../helpers/index.js";
 import { HttpMethod, ISO3166CountryCode, Language, Visibility } from "./enums.js";
 import { TAnyObject, TContact, TEmptyObject, TModify } from "./types.js";
 
@@ -228,6 +229,7 @@ interface IBuildSyncContacts {
 }
 
 interface IBuildUpdateAudience {
+    caseConverter: CaseConverter;
     mailchimpClient: MailchimpClient;
 }
 

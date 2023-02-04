@@ -1,10 +1,10 @@
 import { IUpdateListRequest } from "@mailchimp/mailchimp_marketing";
 import { StatusCodes } from "http-status-codes";
 
-import { caseConverter } from "../../helpers/index.js";
 import { IBuildUpdateAudience, IUpdateAudienceRequestBody, IUpdateAudienceResponse, IUpdatedAudience } from "../../ts/index.js";
 
 function buildUpdateAudience({
+    caseConverter,
     mailchimpClient,
 }: IBuildUpdateAudience) {
     return async function updateAudience(audienceId: string, audience: IUpdateAudienceRequestBody): Promise<IUpdateAudienceResponse> {

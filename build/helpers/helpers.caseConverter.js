@@ -12,4 +12,5 @@ class CaseConverter {
 }
 const caseConverter = new CaseConverter();
 export default caseConverter;
+export { CaseConverter };
 //# sourceMappingURL=helpers.caseConverter.js.map

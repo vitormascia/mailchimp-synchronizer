@@ -1,6 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { caseConverter } from "../../helpers/index.js";
-function buildUpdateAudience({ mailchimpClient, }) {
+function buildUpdateAudience({ caseConverter, mailchimpClient, }) {
     return async function updateAudience(audienceId, audience) {
         const mailchimpRequest = caseConverter.toSnakeCase(audience);
         const _updatedAudience = await mailchimpClient.updateAudience(audienceId, mailchimpRequest);

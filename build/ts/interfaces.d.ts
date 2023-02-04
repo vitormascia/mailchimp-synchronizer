@@ -4,6 +4,7 @@ import { IncomingHttpHeaders } from "http";
 import { StatusCodes } from "http-status-codes";
 import Joi from "joi";
 import { MailchimpClient, TrioClient } from "../clients/index.js";
+import { CaseConverter } from "../helpers/index.js";
 import { HttpMethod, ISO3166CountryCode, Language, Visibility } from "./enums.js";
 import { TAnyObject, TContact, TEmptyObject, TModify } from "./types.js";
 interface IConfig {
@@ -212,6 +213,7 @@ interface IBuildSyncContacts {
     mailchimpClient: MailchimpClient;
 }
 interface IBuildUpdateAudience {
+    caseConverter: CaseConverter;
     mailchimpClient: MailchimpClient;
 }
 export { IBuildPingMailchimp, IBuildSyncContacts, IBuildUpdateAudience, IClient, IConfig, IHttpRequest, IHttpResponse, IJoiBaseSchema, ILogger, IMailchimpHealthCheck, IPingMailchimpRequest, IPingMailchimpResponse, IPingRequest, IPingResponse, IRequestParams, ISyncContactsRequest, ISyncContactsResponse, ITrioContact, IUpdateAudienceRequest, IUpdateAudienceRequestBody, IUpdateAudienceRequestPath, IUpdateAudienceResponse, IUpdatedAudience, };

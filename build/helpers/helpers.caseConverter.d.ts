@@ -8,3 +8,4 @@ declare class CaseConverter {
 }
 declare const caseConverter: CaseConverter;
 export default caseConverter;
+export { CaseConverter };
