@@ -1,1 +1,1 @@
-web: npm api:boot:js
+web: npm run api:boot:js
