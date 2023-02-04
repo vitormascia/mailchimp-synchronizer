@@ -198,9 +198,11 @@ Based on every **Clean Architecture** concept that was described above, here's h
 
 There are a few scripts at `package.json`:
 
-- `api:boot` ➜ Boots the API entry point. Powered by [**TS-Node**](https://www.npmjs.com/package/ts-node)
+- `api:boot:ts` ➜ Boots the API `*.ts` entry point. Powered by [**TS-Node**](https://www.npmjs.com/package/ts-node)
 
-- `api:boot-watch` ➜ Boots the API entry point and reload it whenever detects file changes. Powered by [**Nodemon**](https://www.npmjs.com/package/nodemon) and [**TS-Node**](https://www.npmjs.com/package/ts-node)
+- `api:boot:js` ➜ Boots the API `*.js` entry point. Powered by [**Node**](https://nodejs.org/en)
+
+- `api:boot-watch:ts` ➜ Boots the API `*.ts` entry point and reload it whenever detects file changes. Powered by [**Nodemon**](https://www.npmjs.com/package/nodemon) and [**TS-Node**](https://www.npmjs.com/package/ts-node)
 
 - `lint` ➜ Sub-script for `lint:fix`. Powered by [**ESLint**](https://www.npmjs.com/package/eslint)
 

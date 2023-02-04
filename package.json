@@ -6,8 +6,9 @@
     "main": "./build/app/entry-points/app.entry-points.apiBoot.ts",
     "license": "ISC",
     "scripts": {
-        "api:boot": "ts-node ./src/app/entry-points/app.entry-points.apiBoot.ts",
-        "api:boot-watch": "nodemon --watch ./src/**/*.ts --exec ts-node ./src/app/entry-points/app.entry-points.apiBoot.ts",
+        "api:boot:ts": "ts-node ./src/app/entry-points/app.entry-points.apiBoot.ts",
+        "api:boot:js": "node ./build/app/entry-points/app.entry-points.apiBoot.js",
+        "api:boot-watch:ts": "nodemon --watch ./src/**/*.ts --exec ts-node ./src/app/entry-points/app.entry-points.apiBoot.ts",
         "lint": "eslint ./src --ext .js,.ts",
         "lint:fix": "npm run lint -- --fix && eslint --fix",
         "ts:compile": "tsc --pretty",

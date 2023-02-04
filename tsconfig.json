@@ -14,6 +14,7 @@
         "allowJs": false,
         "noUnusedParameters": true,
         "noUnusedLocals": true,
+        "declaration": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "strictPropertyInitialization": false,
