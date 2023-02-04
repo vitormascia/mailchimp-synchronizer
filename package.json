@@ -12,8 +12,8 @@
         "api:boot-watch:ts": "nodemon --watch ./src/**/*.ts --exec ts-node ./src/app/entry-points/app.entry-points.apiBoot.ts",
         "lint": "eslint ./src --ext .js,.ts",
         "lint:fix": "npm run lint -- --fix && eslint --fix",
-        "ts:compile": "tsc --pretty",
-        "ts:compile-watch": "tsc --watch --pretty",
+        "ts:compile": "rimraf build && tsc --pretty",
+        "ts:compile-watch": "rimraf build && tsc --watch --pretty",
         "ts:check": "tsc --noEmit --pretty",
         "reinstall-modules": "rimraf node_modules && npm ci"
     },
