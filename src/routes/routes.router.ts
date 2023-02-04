@@ -6,8 +6,8 @@ import healthChecksRoutes from "./routes.healthChecks.js";
 
 const router = express.Router();
 
-router.use("/health-checks", healthChecksRoutes);
 router.use("/audiences", audiencesRoutes);
 router.use("/contacts", contactsRoutes);
+router.use("/health-checks", healthChecksRoutes);
 
 export default router;

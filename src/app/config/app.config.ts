@@ -20,7 +20,6 @@ const config: IConfig = Object.freeze({
         AUDIENCE_ID: setConfig(process.env.MAILCHIMP_AUDIENCE_ID),
         API: {
             KEY: setConfig(process.env.MAILCHIMP_API_KEY),
-            BASE_URL: setConfig(process.env.MAILCHIMP_API_BASE_URL),
         },
     },
     TRIO: {

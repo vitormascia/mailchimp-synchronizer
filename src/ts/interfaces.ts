@@ -18,7 +18,6 @@ interface IConfig {
         AUDIENCE_ID: string;
         API: {
             KEY: string;
-            BASE_URL: string;
         }
     }
     TRIO: {
