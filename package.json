@@ -5,11 +5,6 @@
     "type": "module",
     "main": "./build/app/entry-points/app.entry-points.apiBoot.ts",
     "license": "ISC",
-    "pre-commit": [
-        "ts.check",
-        "build",
-        "add-build"
-    ],
     "scripts": {
         "api:boot": "ts-node ./src/app/entry-points/app.entry-points.apiBoot.ts",
         "api:boot-watch": "nodemon --watch ./src/**/*.ts --exec ts-node ./src/app/entry-points/app.entry-points.apiBoot.ts",
@@ -18,12 +13,7 @@
         "ts:compile": "tsc --pretty",
         "ts:compile-watch": "tsc --watch --pretty",
         "ts:check": "tsc --noEmit --pretty",
-        "reinstall-modules": "rm -rf node_modules && npm ci",
-        "vercel:deploy": "vercel deploy --prod",
-        "start": "nodemon ./src/app/entry-points/app.entry-points.apiBoot.ts",
-        "build": "rimraf build && tsc",
-        "ts.check": "tsc --project tsconfig.json",
-        "add-build": "git add build"
+        "reinstall-modules": "rimraf node_modules && npm ci"
     },
     "dependencies": {
         "@hapi/boom": "^10.0.0",
@@ -44,7 +34,6 @@
         "tslib": "^2.5.0",
         "typescript": "4.9.4",
         "uuid": "^9.0.0",
-        "vercel": "^28.15.0",
         "winston": "^3.8.2"
     },
     "devDependencies": {
@@ -59,7 +48,6 @@
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-simple-import-sort": "^10.0.0",
         "nodemon": "^2.0.20",
-        "pre-commit": "^1.2.2",
         "rimraf": "^4.1.2"
     }
 }
