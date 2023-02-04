@@ -12,19 +12,19 @@ interface IConfig {
         PORT: number;
         NAME: string;
         ENVIRONMENT: string;
-    }
+    };
     MAILCHIMP: {
         SERVER_PREFIX: string;
         AUDIENCE_ID: string;
         API: {
             KEY: string;
-        }
-    }
+        };
+    };
     TRIO: {
         API: {
             BASE_URL: string;
-        }
-    }
+        };
+    };
 }
 
 interface ILogger<TLogger, TCreateReturn> {
@@ -69,7 +69,9 @@ interface IPingRequest extends TModify<IHttpRequest, {
 }> { }
 
 interface IPingResponse extends TModify<IHttpResponse, {
-    data: { ok: true },
+    data: {
+        ok: true;
+    };
 }> { }
 
 interface IPingMailchimpRequest extends TModify<IHttpRequest, {
@@ -82,8 +84,8 @@ interface IMailchimpHealthCheck {
 
 interface IPingMailchimpResponse extends TModify<IHttpResponse, {
     data: {
-        mailchimpHealthCheck: IMailchimpHealthCheck
-    },
+        mailchimpHealthCheck: IMailchimpHealthCheck;
+    };
 }> { }
 
 interface ISyncContactsRequest extends TModify<IHttpRequest, {
@@ -94,7 +96,7 @@ interface ISyncContactsResponse extends TModify<IHttpResponse, {
     data: {
         syncedContacts: number;
         contacts: TContact[];
-    },
+    };
 }> { }
 
 interface IUpdateAudienceRequestPath {
@@ -146,27 +148,27 @@ interface IUpdatedAudience {
         zip: string;
         country: string;
         phone: string;
-    },
+    };
     permissionReminder: string;
-    useArchiveBar: false,
+    useArchiveBar: boolean;
     campaignDefaults: {
         fromName: string;
         fromEmail: string;
         subject: string;
         language: string;
-    },
-    notifyOnSubscribe: false,
-    notifyOnUnsubscribe: false,
+    };
+    notifyOnSubscribe: boolean;
+    notifyOnUnsubscribe: boolean;
     dateCreated: string;
     listRating: number;
-    emailTypeOption: true,
+    emailTypeOption: boolean;
     subscribeUrlShort: string;
     subscribeUrlLong: string;
     beamerAddress: string;
     visibility: Visibility;
-    doubleOptin: false,
-    hasWelcome: false,
-    marketingPermissions: false,
+    doubleOptin: boolean;
+    hasWelcome: boolean;
+    marketingPermissions: boolean;
     modules: string[];
     stats: {
         memberCount: number;
@@ -186,20 +188,20 @@ interface IUpdatedAudience {
         clickRate: number;
         lastSubDate: string;
         lastUnsubDate: string;
-    },
+    };
     _links: {
         rel: string;
         href: string;
         method: HttpMethod;
         targetSchema?: string;
         schema?: string;
-    }[],
+    }[];
 }
 
 interface IUpdateAudienceResponse extends TModify<IHttpResponse, {
     data: {
-        updatedAudience: IUpdatedAudience
-    }
+        updatedAudience: IUpdatedAudience;
+    };
 }> { }
 
 interface IClient<TConfig, TClient> {

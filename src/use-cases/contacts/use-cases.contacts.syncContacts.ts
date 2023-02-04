@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 
 import { config } from "../../app/index.js";
-import { IBuildSyncContacts, ISyncContactsRequest, ISyncContactsResponse, Language, MemberStatus } from "../../ts/index.js";
+import { IBuildSyncContacts, ISyncContactsResponse, Language, MemberStatus } from "../../ts/index.js";
 
 const { MAILCHIMP } = config;
 
@@ -9,7 +9,7 @@ function buildSyncContacts({
     trioClient,
     mailchimpClient,
 }: IBuildSyncContacts) {
-    return async function syncContacts(_request: ISyncContactsRequest): Promise<ISyncContactsResponse> {
+    return async function syncContacts(): Promise<ISyncContactsResponse> {
         const trioContacts = await trioClient.getContacts();
 
         await mailchimpClient.batchAudienceMembers(

@@ -1,6 +1,6 @@
-import { ISyncContactsRequest } from "../ts/index.js";
+import { ISyncContactsRequest, ISyncContactsResponse } from "../ts/index.js";
 import { contactsService } from "../use-cases/index.js";
 
 export default Object.freeze({
-    syncContacts: (httpRequest: ISyncContactsRequest) => contactsService.syncContacts(httpRequest),
+    syncContacts: (_httpRequest: ISyncContactsRequest): Promise<ISyncContactsResponse> => contactsService.syncContacts(),
 });
