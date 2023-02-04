@@ -122,7 +122,7 @@ Based on every **Clean Architecture** concept that was described above, here's h
 
 - :brain: **app**
 
-  - **config** ➜ Reads and organize `.env` file
+  - **config** ➜ Reads and organize **`.env`** file
 
   - **entry-points** ➜ Boots any entry point. There's currently 1: API entry point, dedicated to HTTP communication. Powered by [**Express.js**](https://www.npmjs.com/package/express)
 
@@ -162,11 +162,11 @@ Based on every **Clean Architecture** concept that was described above, here's h
 
 - :jigsaw: **use-cases**
 
-  - **audiences** ➜ Executes application-specific business rules related to the `/audiences` endpoints family, providing [**Dependency Injection**](https://en.wikipedia.org/wiki/Dependency_injection)
+  - **audiences** ➜ Executes application-specific business rules related to the **`/audiences`** endpoints family, providing [**Dependency Injection**](https://en.wikipedia.org/wiki/Dependency_injection)
 
-  - **contacts** ➜ Executes application-specific business rules related to the `/contacts` endpoints family, providing [**Dependency Injection**](https://en.wikipedia.org/wiki/Dependency_injection)
+  - **contacts** ➜ Executes application-specific business rules related to the **`/contacts`** endpoints family, providing [**Dependency Injection**](https://en.wikipedia.org/wiki/Dependency_injection)
 
-  - **healthChecks** ➜ Executes application-specific business rules related to the `/health-checks` endpoints family, providing [**Dependency Injection**](https://en.wikipedia.org/wiki/Dependency_injection)
+  - **healthChecks** ➜ Executes application-specific business rules related to the **`/health-checks`** endpoints family, providing [**Dependency Injection**](https://en.wikipedia.org/wiki/Dependency_injection)
 
 - :crystal_ball: **middlewares**
 
@@ -178,11 +178,11 @@ Based on every **Clean Architecture** concept that was described above, here's h
 
 - :world_map: **routes**
 
-  - **audiences** ➜ [**Express.js**](https://www.npmjs.com/package/express) routes for the `/audiences` endpoints family. Calls the **bouncer** and **buildCallback** middlewares
+  - **audiences** ➜ [**Express.js**](https://www.npmjs.com/package/express) routes for the **`/audiences`** endpoints family. Calls the **bouncer** and **buildCallback** middlewares
 
-  - **contacts** ➜ [**Express.js**](https://www.npmjs.com/package/express) routes for the `/contacts` endpoints family. Calls the **bouncer** and **buildCallback** middlewares
+  - **contacts** ➜ [**Express.js**](https://www.npmjs.com/package/express) routes for the **`/contacts`** endpoints family. Calls the **bouncer** and **buildCallback** middlewares
 
-  - **healthChecks** ➜ [**Express.js**](https://www.npmjs.com/package/express) routes for the `/health-checks` endpoints family. Calls the **bouncer** and **buildCallback** middlewares
+  - **healthChecks** ➜ [**Express.js**](https://www.npmjs.com/package/express) routes for the **`/health-checks`** endpoints family. Calls the **bouncer** and **buildCallback** middlewares
 
   - **router** ➜ [**Express.js**](https://www.npmjs.com/package/express) router for all endpoints families
 
@@ -196,38 +196,44 @@ Based on every **Clean Architecture** concept that was described above, here's h
 
 ## :black_joker: **Scripts**
 
-There are a few scripts at `package.json`:
+There are a few scripts at **`package.json`**:
 
-- `api:boot:ts` ➜ Boots the API `*.ts` entry point. Powered by [**TS-Node**](https://www.npmjs.com/package/ts-node)
+- **`api:boot:ts`** ➜ Boots the API **`*.ts`** entry point. Powered by [**TS-Node**](https://www.npmjs.com/package/ts-node)
 
-- `api:boot:js` ➜ Boots the API `*.js` entry point. Powered by [**Node**](https://nodejs.org/en)
+- **`api:boot:js`** ➜ Boots the API **`*.js`** entry point. Powered by [**Node**](https://nodejs.org/en)
 
-- `api:boot-watch:ts` ➜ Boots the API `*.ts` entry point and reload it whenever detects file changes. Powered by [**Nodemon**](https://www.npmjs.com/package/nodemon) and [**TS-Node**](https://www.npmjs.com/package/ts-node)
+- **`api:boot-watch:ts`** ➜ Boots the API **`*.ts`** entry point and reload it whenever detects file changes. Powered by [**Nodemon**](https://www.npmjs.com/package/nodemon) and [**TS-Node**](https://www.npmjs.com/package/ts-node)
 
-- `lint` ➜ Sub-script for `lint:fix`. Powered by [**ESLint**](https://www.npmjs.com/package/eslint)
+- **`lint`** ➜ Sub-script for **`lint:fix`**. Powered by [**ESLint**](https://www.npmjs.com/package/eslint)
 
-- `lint:fix` ➜ Apply application ESLint rules in all files. Powered by [**ESLint**](https://www.npmjs.com/package/eslint)
+- **`lint:fix`** ➜ Apply application ESLint rules in all files. Powered by [**ESLint**](https://www.npmjs.com/package/eslint)
 
-- `ts:compile` ➜ Transpile all `*.ts` files to `*.js` at outdir `build`, while enable color and formatting in TypeScript's output to make compiler errors easier to read. Powered by [**TypeScript**](https://www.npmjs.com/package/typescript)
+- **`ts:compile`** ➜ Transpile all **`*.ts`** files to **`*.js`** at outdir **`build`**, while enable color and formatting in TypeScript's output to make compiler errors easier to read. Powered by [**TypeScript**](https://www.npmjs.com/package/typescript)
 
-- `ts:compile-watch` ➜ Transpile all `*.ts` files to `*.js` at outdir `build`, while enable color and formatting in TypeScript's output to make compiler errors easier to read and watch input files. Powered by [**TypeScript**](https://www.npmjs.com/package/typescript)
+- **`ts:compile-watch`** ➜ Transpile all **`*.ts`** files to **`*.js`** at outdir **`build`**, while enable color and formatting in TypeScript's output to make compiler errors easier to read and watch input files. Powered by [**TypeScript**](https://www.npmjs.com/package/typescript)
 
-- `ts:check` ➜ Compile all `*.ts` files to `*.js`, but emitting files is disabled
+- **`ts:check`** ➜ Compile all **`*.ts`** files to **`*.js`**, but emitting files is disabled
 
-- `reinstall-modules` ➜ Delete `node_modules` directory and apply `npm` clean install
+- **`reinstall-modules`** ➜ Delete **`node_modules`** directory and apply **`npm`** clean install
 
 ---
 
 ## :clipboard: **Endpoints table**
 
+Base URLs:
+
+- **`LOCAL`** ➜ **`http://localhost:3000`**
+
+- **`PRD`** ➜ **`https://mailchimp-synchronizer.herokuapp.com`**
+
 You'll find the endpoints methods, paths and description in the section bellow. The only endpoint required by [**Trio's Back-End Project**](https://trio.notion.site/Back-End-Project-78fa9bd235be48fd82887f73055ae133) was the `/contacts/sync`, the others are extras! Feel free to try out them all.
 
-| Method  | Path                       | Description                                 |
-|---------|----------------------------|---------------------------------------------|
-| `PATCH` | `/audiences/:audienceId`   | [Update audience](#update-audience)         |
-| `GET`   | `/contacts/sync`           | [Syncs contacts](#syncs-contacts)           |
-| `GET`   | `/health-checks`           | [Ping API](#ping-api)                       |
-| `GET`   | `/health-checks/mailchimp` | [Ping Mailchimp's API](#ping-mailchimp-api) |
+| Method      | Path                           | Description                                 |
+|-------------|--------------------------------|---------------------------------------------|
+| **`PATCH`** | **`/audiences/:audienceId`**   | [Update audience](#update-audience)         |
+| **`GET`**   | **`/contacts/sync`**           | [Syncs contacts](#syncs-contacts)           |
+| **`GET`**   | **`/health-checks`**           | [Ping API](#ping-api)                       |
+| **`GET`**   | **`/health-checks/mailchimp`** | [Ping Mailchimp's API](#ping-mailchimp-api) |
 
 ---
 
@@ -266,7 +272,7 @@ You'll find the endpoints methods, paths and description in the section bellow. 
 }
 ```
 
-- #### **PATH PARAMS** `None`
+- #### **PATH PARAMS `None`**
 
 ```typescript
 {
@@ -274,11 +280,11 @@ You'll find the endpoints methods, paths and description in the section bellow. 
 }
 ```
 
-- #### **QUERY PARAMS** `None`
+- #### **QUERY PARAMS `None`**
 
 #### **SUCCESS RESPONSE**
 
-- **Code** `HTTP 200 OK`
+- **Code `HTTP 200 OK`**
 
 ```typescript
 {
@@ -349,15 +355,15 @@ You'll find the endpoints methods, paths and description in the section bellow. 
 
 ### <a name="syncs-contacts"></a> **`[GET]` Syncs contacts `/contacts/sync`**
 
-- #### **BODY PARAMS** `None`
+- #### **BODY PARAMS `None`**
 
-- #### **PATH PARAMS** `None`
+- #### **PATH PARAMS `None`**
 
-- #### **QUERY PARAMS** `None`
+- #### **QUERY PARAMS `None`**
 
 #### **SUCCESS RESPONSE**
 
-- **Code** `HTTP 200 OK`
+- **Code `HTTP 200 OK`**
 
 ```typescript
 {
@@ -372,15 +378,15 @@ You'll find the endpoints methods, paths and description in the section bellow. 
 
 ### <a name="ping-api"></a> **`[GET]` Ping API `/health-checks`**
 
-- #### **BODY PARAMS** `None`
+- #### **BODY PARAMS `None`**
 
-- #### **PATH PARAMS** `None`
+- #### **PATH PARAMS `None`**
 
-- #### **QUERY PARAMS** `None`
+- #### **QUERY PARAMS `None`**
 
 #### **SUCCESS RESPONSE**
 
-- **Code** `HTTP 200 OK`
+- **Code `HTTP 200 OK`**
 
 ```typescript
 {
@@ -390,15 +396,15 @@ You'll find the endpoints methods, paths and description in the section bellow. 
 
 ### <a name="ping-mailchimp-api"></a> **`[GET]` Ping Mailchimp's API `/health-checks/mailchimp`**
 
-- #### **BODY PARAMS** `None`
+- #### **BODY PARAMS `None`**
 
-- #### **PATH PARAMS** `None`
+- #### **PATH PARAMS `None`**
 
-- #### **QUERY PARAMS** `None`
+- #### **QUERY PARAMS `None`**
 
 #### **SUCCESS RESPONSE**
 
-- **Code** `HTTP 200 OK`
+- **Code `HTTP 200 OK`**
 
 ```typescript
 {
