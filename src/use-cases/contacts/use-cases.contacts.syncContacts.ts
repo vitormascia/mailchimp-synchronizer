@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { pick } from "lodash";
+import _ from "lodash";
 
 import { config } from "../../app/index.js";
 import { IBuildSyncContacts, ISyncContactsResponse, Language, MemberStatus } from "../../ts/index.js";
@@ -31,7 +31,7 @@ function buildSyncContacts({
         );
 
         const contacts = trioContacts.map((trioContact) => {
-            return pick(trioContact, [
+            return _.pick(trioContact, [
                 "firstName",
                 "lastName",
                 "email",

@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { pick } from "lodash";
+import _ from "lodash";
 import { config } from "../../app/index.js";
 import { Language, MemberStatus } from "../../ts/index.js";
 const { MAILCHIMP } = config;
@@ -20,7 +20,7 @@ function buildSyncContacts({ trioClient, mailchimpClient, }) {
             }),
         });
         const contacts = trioContacts.map((trioContact) => {
-            return pick(trioContact, [
+            return _.pick(trioContact, [
                 "firstName",
                 "lastName",
                 "email",
