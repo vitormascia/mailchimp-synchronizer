@@ -413,3 +413,14 @@ You'll find the endpoints methods, paths and description in the section bellow. 
 	};
 }
 ```
+
+---
+
+## :movie_camera: **Videos**
+
+Watch in this order:
+
+- [**Part I**](https://www.youtube.com/watch?v=9QiBpF_lKEk)
+- [**Part II**](https://www.youtube.com/watch?v=WUppR9PG4Bc)
+- [**Part III**](https://www.youtube.com/watch?v=6JWzvwdJRb0)
+- [**Part IV**](https://www.youtube.com/watch?v=of7kBKuNkmE)
