@@ -14,7 +14,7 @@ joiBaseSchema.body = Joi.object({
         zip: Joi.when("country", {
             switch: [
                 { is: ISO3166CountryCode.United_States_of_America, then: Joi.string().trim().pattern(US_ZIP_REG_EXP, "US ZIP pattern").required() },
-                { is: ISO3166CountryCode.Brazil, then: Joi.string().trim().pattern(BR_ZIP_REG_EXP, "Template Name pattern").required() },
+                { is: ISO3166CountryCode.Brazil, then: Joi.string().trim().pattern(BR_ZIP_REG_EXP, "BR ZIP pattern").required() },
             ],
             otherwise: Joi.string().trim().required(),
         }),
