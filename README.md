@@ -12,7 +12,7 @@ An API dedicated to sync contacts from Trio's Mock API to Mailchimp. Here you'll
 
 First of all, this API core consists not only by Node.js, TypeScript and Express.js as described on the badges above, it also implements the notorious **Clean Architecture** (a.k.a Uncle Bob's Style).
 
-Ok, but why? I can't emphasize enough how learning and implementing the **Clean Architecture** has saved—and is saving so much time in the development of new features, testability of the system and the general maintenance of their components.
+Ok, but why? I can't emphasize enough how learning and implementing the **Clean Architecture** has saved and is saving so much time in the development of new features, testability of the system and the general maintenance of their components.
 
 Implementing it requires a little effort in understanding how it works and will also generate a bit more files than usual, but in the end it always pays off!
 
@@ -239,7 +239,7 @@ You'll find the endpoints methods, paths and description in the section bellow. 
 
 ## :sparkles: **Endpoints glossary**
 
-### <a name="update-audience"></a> **`[PATCH]` Update audience `/audiences`**
+### <a name="update-audience"></a> **`[PATCH]` Update audience `/audiences/:audienceId`**
 
 - #### **BODY PARAMS**
 
@@ -272,7 +272,7 @@ You'll find the endpoints methods, paths and description in the section bellow. 
 }
 ```
 
-- #### **PATH PARAMS `None`**
+- #### **PATH PARAMS**
 
 ```typescript
 {
