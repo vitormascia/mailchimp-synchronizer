@@ -1,8 +1,8 @@
 import Joi from "joi";
 
-import { IJoiBaseSchema } from "../../ts/index.js";
+import { JoiBaseSchema } from "../../ts/index.js";
 
-function generateBaseSchema(): IJoiBaseSchema {
+function generateBaseSchema(): JoiBaseSchema {
     return {
         body: Joi.object({}).required(),
         path: Joi.object({}).required(),

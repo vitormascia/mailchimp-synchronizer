@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import { IConfig } from "../../ts/index.js";
+import { Config } from "../../ts/index.js";
 
 const EMPTY_STRING = "";
 const DEFAULT_APP_PORT = "3000";
@@ -9,7 +9,7 @@ function setConfig(value?: string, defaultValue: string = EMPTY_STRING): string 
     return value ? value : defaultValue;
 }
 
-const config: IConfig = Object.freeze({
+const config: Config = Object.freeze({
     APP: {
         PORT: parseInt(setConfig(process.env.PORT, DEFAULT_APP_PORT)),
         NAME: setConfig(process.env.APP_NAME),

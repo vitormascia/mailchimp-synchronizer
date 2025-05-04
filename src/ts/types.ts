@@ -2,19 +2,29 @@ import _mailchimpClient from "@mailchimp/mailchimp_marketing";
 import { NextFunction, Request, Response } from "express";
 import winston from "winston";
 
-import { IHttpRequest, IHttpResponse, ITrioContact } from "./interfaces.js";
+import { HttpRequest, HttpResponse, TrioContact } from "./interfaces.js";
 
-type TWinstonLogger = typeof winston;
-type TMailchimpClient = typeof _mailchimpClient;
+type WinstonLogger = typeof winston;
+type MailchimpClient = typeof _mailchimpClient;
 
-type TAnyObject = object;
-type TEmptyObject = Record<string, never>;
-type TModify<T, R> = Omit<T, keyof R> & R;
+type AnyObject = object;
+type EmptyObject = Record<string, never>;
+type Modify<T, R> = Omit<T, keyof R> & R;
 
-type TBouncer = (req: Request, _res: Response, next: NextFunction) => Promise<void>;
-type TController = (httpRequest: IHttpRequest) => Promise<IHttpResponse> | IHttpResponse;
-type TBuildCallback = (req: Request, res: Response, next: NextFunction) => Promise<void>;
+type Bouncer = (req: Request, _res: Response, next: NextFunction) => Promise<void>;
+type Controller = (httpRequest: HttpRequest) => Promise<HttpResponse> | HttpResponse;
+type BuildCallback = (req: Request, res: Response, next: NextFunction) => Promise<void>;
 
-type TContact = Omit<ITrioContact, "createdAt" | "avatar" | "id">;
+type Contact = Omit<TrioContact, "createdAt" | "avatar" | "id">;
 
-export { TAnyObject, TBouncer, TBuildCallback, TContact, TController, TEmptyObject, TMailchimpClient, TModify, TWinstonLogger };
+export {
+    AnyObject,
+    Bouncer,
+    BuildCallback,
+    Contact,
+    Controller,
+    EmptyObject,
+    MailchimpClient,
+    Modify,
+    WinstonLogger,
+};

@@ -2,15 +2,15 @@ import { StatusCodes } from "http-status-codes";
 import _ from "lodash";
 
 import { config } from "../../app/index.js";
-import { IBuildSyncContacts, ISyncContactsResponse, Language, MemberStatus } from "../../ts/index.js";
+import { BuildSyncContacts, Language, MemberStatus,SyncContactsResponse } from "../../ts/index.js";
 
 const { MAILCHIMP } = config;
 
 function buildSyncContacts({
     trioClient,
     mailchimpClient,
-}: IBuildSyncContacts) {
-    return async function syncContacts(): Promise<ISyncContactsResponse> {
+}: BuildSyncContacts) {
+    return async function syncContacts(): Promise<SyncContactsResponse> {
         const trioContacts = await trioClient.getContacts();
 
         await mailchimpClient.batchAudienceMembers(

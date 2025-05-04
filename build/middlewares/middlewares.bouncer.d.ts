@@ -1,4 +1,4 @@
 import Joi from "joi";
-import { IRequestParams, TBouncer } from "../ts/index.js";
-declare function bouncer(schema: Joi.ObjectSchema<IRequestParams>): TBouncer;
+import { Bouncer, RequestParams } from "../ts/index.js";
+declare function bouncer(schema: Joi.ObjectSchema<RequestParams>): Bouncer;
 export default bouncer;

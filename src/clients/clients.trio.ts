@@ -2,7 +2,7 @@ import Boom from "@hapi/boom";
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 import { config, logger } from "../app/index.js";
-import { IClient, ITrioContact } from "../ts/index.js";
+import { Client as IClient, TrioContact } from "../ts/index.js";
 
 const { TRIO } = config;
 
@@ -53,9 +53,9 @@ class TrioClient implements IClient<AxiosRequestConfig, AxiosInstance> {
         });
     }
 
-    public async getContacts(): Promise<ITrioContact[]> {
+    public async getContacts(): Promise<TrioContact[]> {
         try {
-            const response = await this.client.get<ITrioContact[]>("/contacts");
+            const response = await this.client.get<TrioContact[]>("/contacts");
 
             this.logSuccess(response, this.getContacts.name);
 

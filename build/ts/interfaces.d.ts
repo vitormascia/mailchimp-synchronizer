@@ -1,4 +1,3 @@
-/// <reference types="node" resolution-mode="require"/>
 import { ParamsDictionary, Query } from "express-serve-static-core";
 import { IncomingHttpHeaders } from "http";
 import { StatusCodes } from "http-status-codes";
@@ -6,8 +5,8 @@ import Joi from "joi";
 import { MailchimpClient, TrioClient } from "../clients/index.js";
 import { CaseConverter } from "../helpers/index.js";
 import { HttpMethod, ISO3166CountryCode, Language, Visibility } from "./enums.js";
-import { TAnyObject, TContact, TEmptyObject, TModify } from "./types.js";
-interface IConfig {
+import { AnyObject, Contact, EmptyObject, Modify } from "./types.js";
+interface Config {
     APP: {
         PORT: number;
         NAME: string;
@@ -26,21 +25,21 @@ interface IConfig {
         };
     };
 }
-interface ILogger<TLogger, TCreateReturn> {
+interface Logger<TLogger, TCreateReturn> {
     logger: TLogger;
     create(): TCreateReturn;
 }
-interface IJoiBaseSchema {
+interface JoiBaseSchema {
     body: Joi.ObjectSchema;
     path: Joi.ObjectSchema;
     query: Joi.ObjectSchema;
 }
-interface IRequestParams {
+interface RequestParams {
     body: any;
     path: ParamsDictionary;
     query: Query;
 }
-interface IHttpRequest extends IRequestParams {
+interface HttpRequest extends RequestParams {
     method: string;
     url: {
         protocol: string;
@@ -53,48 +52,42 @@ interface IHttpRequest extends IRequestParams {
     };
     headers: IncomingHttpHeaders;
 }
-interface IHttpResponse {
+interface HttpResponse {
     statusCode: StatusCodes;
-    data: TAnyObject | TEmptyObject;
+    data: AnyObject | EmptyObject;
 }
-interface IPingRequest extends TModify<IHttpRequest, {
-    body: TEmptyObject;
-}> {
-}
-interface IPingResponse extends TModify<IHttpResponse, {
+type PingRequest = Modify<HttpRequest, {
+    body: EmptyObject;
+}>;
+type PingResponse = Modify<HttpResponse, {
     data: {
         ok: true;
     };
-}> {
-}
-interface IPingMailchimpRequest extends TModify<IHttpRequest, {
-    body: TEmptyObject;
-}> {
-}
-interface IMailchimpHealthCheck {
+}>;
+type PingMailchimpRequest = Modify<HttpRequest, {
+    body: EmptyObject;
+}>;
+interface MailchimpHealthCheck {
     healthStatus: string;
 }
-interface IPingMailchimpResponse extends TModify<IHttpResponse, {
+type PingMailchimpResponse = Modify<HttpResponse, {
     data: {
-        mailchimpHealthCheck: IMailchimpHealthCheck;
+        mailchimpHealthCheck: MailchimpHealthCheck;
     };
-}> {
-}
-interface ISyncContactsRequest extends TModify<IHttpRequest, {
-    body: TEmptyObject;
-}> {
-}
-interface ISyncContactsResponse extends TModify<IHttpResponse, {
+}>;
+type SyncContactsRequest = Modify<HttpRequest, {
+    body: EmptyObject;
+}>;
+type SyncContactsResponse = Modify<HttpResponse, {
     data: {
         syncedContacts: number;
-        contacts: TContact[];
+        contacts: Contact[];
     };
-}> {
-}
-interface IUpdateAudienceRequestPath {
+}>;
+interface UpdateAudienceRequestPath {
     [audienceId: string]: string;
 }
-interface IUpdateAudienceRequestBody {
+interface UpdateAudienceRequestBody {
     name: string;
     contact: {
         address1: string;
@@ -120,12 +113,11 @@ interface IUpdateAudienceRequestBody {
     doubleOptin?: boolean;
     marketingPermissions?: boolean;
 }
-interface IUpdateAudienceRequest extends TModify<IHttpRequest, {
-    body: IUpdateAudienceRequestBody;
-    path: IUpdateAudienceRequestPath;
-}> {
-}
-interface IUpdatedAudience {
+type UpdateAudienceRequest = Modify<HttpRequest, {
+    body: UpdateAudienceRequestBody;
+    path: UpdateAudienceRequestPath;
+}>;
+interface UpdatedAudience {
     id: string;
     webId: number;
     name: string;
@@ -187,17 +179,16 @@ interface IUpdatedAudience {
         schema?: string;
     }[];
 }
-interface IUpdateAudienceResponse extends TModify<IHttpResponse, {
+type UpdateAudienceResponse = Modify<HttpResponse, {
     data: {
-        updatedAudience: IUpdatedAudience;
+        updatedAudience: UpdatedAudience;
     };
-}> {
-}
-interface IClient<TConfig, TClient> {
+}>;
+interface Client<TConfig, TClient> {
     config: TConfig;
     client: TClient;
 }
-interface ITrioContact {
+interface TrioContact {
     createdAt: string;
     firstName: string;
     lastName: string;
@@ -205,15 +196,15 @@ interface ITrioContact {
     avatar: string;
     id: string;
 }
-interface IBuildPingMailchimp {
+interface BuildPingMailchimp {
     mailchimpClient: MailchimpClient;
 }
-interface IBuildSyncContacts {
+interface BuildSyncContacts {
     trioClient: TrioClient;
     mailchimpClient: MailchimpClient;
 }
-interface IBuildUpdateAudience {
+interface BuildUpdateAudience {
     caseConverter: CaseConverter;
     mailchimpClient: MailchimpClient;
 }
-export { IBuildPingMailchimp, IBuildSyncContacts, IBuildUpdateAudience, IClient, IConfig, IHttpRequest, IHttpResponse, IJoiBaseSchema, ILogger, IMailchimpHealthCheck, IPingMailchimpRequest, IPingMailchimpResponse, IPingRequest, IPingResponse, IRequestParams, ISyncContactsRequest, ISyncContactsResponse, ITrioContact, IUpdateAudienceRequest, IUpdateAudienceRequestBody, IUpdateAudienceRequestPath, IUpdateAudienceResponse, IUpdatedAudience, };
+export { BuildPingMailchimp, BuildSyncContacts, BuildUpdateAudience, Client, Config, HttpRequest, HttpResponse, JoiBaseSchema, Logger, MailchimpHealthCheck, PingMailchimpRequest, PingMailchimpResponse, PingRequest, PingResponse, RequestParams, SyncContactsRequest, SyncContactsResponse, TrioContact, UpdateAudienceRequest, UpdateAudienceRequestBody, UpdateAudienceRequestPath, UpdateAudienceResponse, UpdatedAudience, };

@@ -2,11 +2,11 @@ import Boom from "@hapi/boom";
 import _mailchimpClient, { IBatchListMembersOptions, IBatchListMembersRequest, IBatchListMembersResponse, IMailchimpConfig, IPingResponse, IUpdateListRequest, IUpdateListResponse } from "@mailchimp/mailchimp_marketing";
 
 import { config, logger } from "../app/index.js";
-import { IClient, TAnyObject, TMailchimpClient } from "../ts/index.js";
+import { AnyObject, Client, MailchimpClient as TMailchimpClient } from "../ts/index.js";
 
 const { MAILCHIMP } = config;
 
-class MailchimpClient implements IClient<IMailchimpConfig, TMailchimpClient> {
+class MailchimpClient implements Client<IMailchimpConfig, TMailchimpClient> {
     readonly config: IMailchimpConfig;
     readonly client: TMailchimpClient;
 
@@ -19,7 +19,7 @@ class MailchimpClient implements IClient<IMailchimpConfig, TMailchimpClient> {
         this.client = _mailchimpClient;
     }
 
-    private logSuccess(response: TAnyObject, method: string): void {
+    private logSuccess(response: AnyObject, method: string): void {
         logger.info("HTTP_REQUEST_SUCCESS", {
             data: {
                 client: this.constructor.name,

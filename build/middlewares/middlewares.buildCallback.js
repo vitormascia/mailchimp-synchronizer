@@ -14,7 +14,7 @@ function buildCallback(controller) {
                     endpoint: req.originalUrl,
                 },
                 source: {
-                    ip: req.ip,
+                    ip: req.ip ?? "",
                     userAgent: req.get("User-Agent") ?? "N/A",
                 },
                 headers: req.headers,

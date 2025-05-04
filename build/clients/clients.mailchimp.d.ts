@@ -1,6 +1,6 @@
 import { IBatchListMembersOptions, IBatchListMembersRequest, IBatchListMembersResponse, IMailchimpConfig, IPingResponse, IUpdateListRequest, IUpdateListResponse } from "@mailchimp/mailchimp_marketing";
-import { IClient, TMailchimpClient } from "../ts/index.js";
-declare class MailchimpClient implements IClient<IMailchimpConfig, TMailchimpClient> {
+import { Client, MailchimpClient as TMailchimpClient } from "../ts/index.js";
+declare class MailchimpClient implements Client<IMailchimpConfig, TMailchimpClient> {
     readonly config: IMailchimpConfig;
     readonly client: TMailchimpClient;
     constructor();

@@ -1,5 +1,5 @@
-import { IUpdateAudienceRequest, IUpdateAudienceResponse } from "../ts/index.js";
+import { UpdateAudienceRequest, UpdateAudienceResponse } from "../ts/index.js";
 declare const _default: Readonly<{
-    updateAudience: (httpRequest: IUpdateAudienceRequest) => Promise<IUpdateAudienceResponse>;
+    updateAudience: (httpRequest: UpdateAudienceRequest) => Promise<UpdateAudienceResponse>;
 }>;
 export default _default;

@@ -1,3 +1,3 @@
-import { IBuildSyncContacts, ISyncContactsResponse } from "../../ts/index.js";
-declare function buildSyncContacts({ trioClient, mailchimpClient, }: IBuildSyncContacts): () => Promise<ISyncContactsResponse>;
+import { BuildSyncContacts, SyncContactsResponse } from "../../ts/index.js";
+declare function buildSyncContacts({ trioClient, mailchimpClient, }: BuildSyncContacts): () => Promise<SyncContactsResponse>;
 export default buildSyncContacts;

@@ -1,9 +1,9 @@
 import { StatusCodes } from "http-status-codes";
 
-import { IPingResponse } from "../../ts/index.js";
+import { PingResponse } from "../../ts/index.js";
 
 function buildPing() {
-    return function ping(): IPingResponse {
+    return function ping(): PingResponse {
         return {
             statusCode: StatusCodes.OK,
             data: { ok: true },

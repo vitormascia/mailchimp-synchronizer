@@ -5,11 +5,11 @@ class CaseConverter {
     private readonly camelCaseConverter: typeof camelcasekeys = camelcasekeys;
     private readonly snakeCaseConverter: typeof snakecasekeys = snakecasekeys;
 
-    public toCamelCase<T>(object: object, options: CamelCaseKeysOptions = { deep: true, exclude: [] }): T {
+    public toCamelCase<T>(object: Record<string, unknown> | Record<string, unknown>[], options: CamelCaseKeysOptions = { deep: true, exclude: [] }): T {
         return this.camelCaseConverter(object, options) as T;
     }
 
-    public toSnakeCase<T>(object: object, options: SnakeCaseKeysOptions = { deep: true, exclude: [] }): T {
+    public toSnakeCase<T>(object: Record<string, unknown> | Record<string, unknown>[], options: SnakeCaseKeysOptions = { deep: true, exclude: [] }): T {
         return this.snakeCaseConverter(object, options) as T;
     }
 }

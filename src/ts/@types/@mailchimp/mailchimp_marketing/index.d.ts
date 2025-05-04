@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
+
 declare module "@mailchimp/mailchimp_marketing" {
     import { ReasonPhrases, StatusCodes } from "http-status-codes";
 
@@ -124,8 +124,8 @@ declare module "@mailchimp/mailchimp_marketing" {
     }
 
     export interface IBatchListMembersOptions {
-        skip_merge_validation: boolean = false;
-        skip_duplicate_check: boolean = false;
+        skip_merge_validation: boolean;
+        skip_duplicate_check: boolean;
     }
 
     export interface IBatchListMembersResponse {

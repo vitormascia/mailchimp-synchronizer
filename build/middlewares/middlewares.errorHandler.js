@@ -15,7 +15,7 @@ function errorHandler(error, _req, res, next) {
                 error,
             },
         });
-        return res.status(error.output.statusCode).json(error);
+        res.status(error.output.statusCode).json(error);
     }
     const boomError = Boom.boomify(error, {
         statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
@@ -27,7 +27,7 @@ function errorHandler(error, _req, res, next) {
             error,
         },
     });
-    return res.status(boomError.output.statusCode).json(boomError);
+    res.status(boomError.output.statusCode).json(boomError);
 }
 export default errorHandler;
 //# sourceMappingURL=middlewares.errorHandler.js.map

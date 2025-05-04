@@ -1,18 +1,18 @@
 import { IUpdateListRequest } from "@mailchimp/mailchimp_marketing";
 import { StatusCodes } from "http-status-codes";
 
-import { IBuildUpdateAudience, IUpdateAudienceRequestBody, IUpdateAudienceResponse, IUpdatedAudience } from "../../ts/index.js";
+import { BuildUpdateAudience, UpdateAudienceRequestBody, UpdateAudienceResponse, UpdatedAudience } from "../../ts/index.js";
 
 function buildUpdateAudience({
     caseConverter,
     mailchimpClient,
-}: IBuildUpdateAudience) {
-    return async function updateAudience(audienceId: string, audience: IUpdateAudienceRequestBody): Promise<IUpdateAudienceResponse> {
-        const mailchimpRequest = caseConverter.toSnakeCase<IUpdateListRequest>(audience);
+}: BuildUpdateAudience) {
+    return async function updateAudience(audienceId: string, audience: UpdateAudienceRequestBody): Promise<UpdateAudienceResponse> {
+        const mailchimpRequest = caseConverter.toSnakeCase<IUpdateListRequest>(audience as Record<string, any>);
 
         const _updatedAudience = await mailchimpClient.updateAudience(audienceId, mailchimpRequest);
 
-        const updatedAudience = caseConverter.toCamelCase<IUpdatedAudience>(_updatedAudience);
+        const updatedAudience = caseConverter.toCamelCase<UpdatedAudience>(_updatedAudience as Record<string, any>);
 
         return {
             statusCode: StatusCodes.OK,

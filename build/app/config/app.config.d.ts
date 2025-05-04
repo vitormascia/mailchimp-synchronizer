@@ -1,4 +1,4 @@
 import "dotenv/config";
-import { IConfig } from "../../ts/index.js";
-declare const config: IConfig;
+import { Config } from "../../ts/index.js";
+declare const config: Config;
 export default config;

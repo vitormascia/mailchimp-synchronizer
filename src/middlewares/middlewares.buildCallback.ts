@@ -2,12 +2,12 @@ import { NextFunction, Request, Response } from "express";
 import { v4 as uuid } from "uuid";
 
 import { logger } from "../app/index.js";
-import { IHttpRequest, TBuildCallback, TController } from "../ts/index.js";
+import { BuildCallback, Controller,HttpRequest } from "../ts/index.js";
 
-function buildCallback(controller: TController): TBuildCallback {
+function buildCallback(controller: Controller): BuildCallback {
     return async function (req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            const httpRequest: IHttpRequest = {
+            const httpRequest: HttpRequest = {
                 body: req.body,
                 path: req.params,
                 query: req.query,
@@ -18,7 +18,7 @@ function buildCallback(controller: TController): TBuildCallback {
                     endpoint: req.originalUrl,
                 },
                 source: {
-                    ip: req.ip,
+                    ip: req.ip ?? "",
                     userAgent: req.get("User-Agent") ?? "N/A",
                 },
                 headers: req.headers,

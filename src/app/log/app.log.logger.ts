@@ -1,6 +1,6 @@
 import winston, { config as WinstonConfig, Logform, Logger as WinstonLogger } from "winston";
 
-import { ILogger, LogLevelColors, TWinstonLogger } from "../../ts/index.js";
+import { Logger as ILogger, LogLevelColors, WinstonLogger as TWinstonLogger } from "../../ts/index.js";
 
 class Logger implements ILogger<TWinstonLogger, WinstonLogger> {
     logger: TWinstonLogger;

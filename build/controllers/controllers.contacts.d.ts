@@ -1,5 +1,5 @@
-import { ISyncContactsRequest, ISyncContactsResponse } from "../ts/index.js";
+import { SyncContactsRequest, SyncContactsResponse } from "../ts/index.js";
 declare const _default: Readonly<{
-    syncContacts: (_httpRequest: ISyncContactsRequest) => Promise<ISyncContactsResponse>;
+    syncContacts: (_httpRequest: SyncContactsRequest) => Promise<SyncContactsResponse>;
 }>;
 export default _default;

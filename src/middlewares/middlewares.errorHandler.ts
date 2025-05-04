@@ -4,7 +4,7 @@ import { StatusCodes } from "http-status-codes";
 
 import { logger } from "../app/index.js";
 
-function errorHandler(error: Error | Boom.Boom, _req: Request, res: Response, next: NextFunction): Response {
+function errorHandler(error: Error | Boom.Boom, _req: Request, res: Response, next: NextFunction): void {
     if (res.headersSent) {
         logger.error("DELEGATING_ERROR_TO_EXPRESS_DEFAULT_ERROR_HANDLER", {
             data: { error },
@@ -21,7 +21,7 @@ function errorHandler(error: Error | Boom.Boom, _req: Request, res: Response, ne
             },
         });
 
-        return res.status(error.output.statusCode).json(error);
+        res.status(error.output.statusCode).json(error);
     }
 
     const boomError = Boom.boomify(error, {
@@ -36,7 +36,7 @@ function errorHandler(error: Error | Boom.Boom, _req: Request, res: Response, ne
         },
     });
 
-    return res.status(boomError.output.statusCode).json(boomError);
+    res.status(boomError.output.statusCode).json(boomError);
 }
 
 export default errorHandler;

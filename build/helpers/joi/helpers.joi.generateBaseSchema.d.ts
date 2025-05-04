@@ -1,3 +1,3 @@
-import { IJoiBaseSchema } from "../../ts/index.js";
-declare function generateBaseSchema(): IJoiBaseSchema;
+import { JoiBaseSchema } from "../../ts/index.js";
+declare function generateBaseSchema(): JoiBaseSchema;
 export default generateBaseSchema;

@@ -1,6 +1,6 @@
-import { IPingMailchimpRequest, IPingMailchimpResponse, IPingRequest, IPingResponse } from "../ts/index.js";
+import { PingMailchimpRequest, PingMailchimpResponse, PingRequest, PingResponse } from "../ts/index.js";
 declare const _default: Readonly<{
-    ping: (_httpRequest: IPingRequest) => IPingResponse;
-    pingMailchimp: (_httpRequest: IPingMailchimpRequest) => Promise<IPingMailchimpResponse>;
+    ping: (_httpRequest: PingRequest) => PingResponse;
+    pingMailchimp: (_httpRequest: PingMailchimpRequest) => Promise<PingMailchimpResponse>;
 }>;
 export default _default;

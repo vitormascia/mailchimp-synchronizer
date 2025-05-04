@@ -1,3 +1,3 @@
-import { TBuildCallback, TController } from "../ts/index.js";
-declare function buildCallback(controller: TController): TBuildCallback;
+import { BuildCallback, Controller } from "../ts/index.js";
+declare function buildCallback(controller: Controller): BuildCallback;
 export default buildCallback;
