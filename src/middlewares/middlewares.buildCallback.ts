@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { v4 as uuid } from "uuid";
 
 import { logger } from "../app/index.js";
-import { BuildCallback, Controller,HttpRequest } from "../ts/index.js";
+import { BuildCallback, Controller, HttpRequest } from "../ts/index.js";
 
 function buildCallback(controller: Controller): BuildCallback {
     return async function (req: Request, res: Response, next: NextFunction): Promise<void> {
