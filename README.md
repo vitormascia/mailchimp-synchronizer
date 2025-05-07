@@ -1,8 +1,8 @@
 # :monkey: **Mailchimp Synchronizer**
 
-![Node.js](https://img.shields.io/badge/node-19.5.0-green.svg)
-![TypeScript](https://img.shields.io/badge/typescript-4.9.4-blue.svg)
-![Express.js](https://img.shields.io/badge/express-4.18.2-red.svg)
+![Node.js](https://img.shields.io/badge/node-24.0.0-green.svg)
+![TypeScript](https://img.shields.io/badge/typescript-5.8.3-blue.svg)
+![Express.js](https://img.shields.io/badge/express-5.1.0-red.svg)
 
 An API dedicated to sync contacts from Trio's Mock API to Mailchimp. Here you'll find the deliverables requested at [**Trio's Back-End Project**](https://trio.notion.site/Back-End-Project-78fa9bd235be48fd82887f73055ae133) and a few extra things!
 
