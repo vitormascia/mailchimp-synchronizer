@@ -4,7 +4,7 @@
 ![TypeScript](https://img.shields.io/badge/typescript-5.8.3-blue.svg)
 ![Express.js](https://img.shields.io/badge/express-5.1.0-red.svg)
 
-An API dedicated to sync contacts from a Mock API to Mailchimp. Here you'll find the deliverables requested at [**Trio's Back-End Project**](https://trio.notion.site/Back-End-Project-78fa9bd235be48fd82887f73055ae133) and a few extra things!
+An API dedicated to sync contacts from a Mock API to Mailchimp.
 
 ---
 
