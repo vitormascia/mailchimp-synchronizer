@@ -226,7 +226,7 @@ Base URLs:
 
 - **`PRD`** ➜ **`https://mailchimp-synchronizer.herokuapp.com`**
 
-You'll find the endpoints methods, paths and description in the section bellow. The only endpoint required by [**Trio's Back-End Project**](https://trio.notion.site/Back-End-Project-78fa9bd235be48fd82887f73055ae133) was the `/contacts/sync`, the others are extras! Feel free to try out them all.
+You'll find the endpoints methods, paths and description in the section bellow.
 
 | Method      | Path                           | Description                                 |
 |-------------|--------------------------------|---------------------------------------------|
